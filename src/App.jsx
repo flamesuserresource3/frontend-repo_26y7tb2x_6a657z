@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import Header from './components/Header';
+import Announcements from './components/Announcements';
+import Activities from './components/Activities';
+import DailyDevotion from './components/DailyDevotion';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <Header />
+      <main>
+        <Announcements />
+        <Activities />
+        <DailyDevotion />
+      </main>
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} COOL Sabtu Online. All rights reserved.</p>
+          <p className="text-sm text-gray-500">“Let everything that has breath praise the Lord.” — Psalm 150:6</p>
         </div>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
